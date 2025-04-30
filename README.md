@@ -107,13 +107,12 @@ pip install langchain chromadb pypdf docx2txt sentence-transformers
 ```bash
 from chatdoc import ChatDoc
 # 初始化系统
-assistant = ChatDoc()
-assistant.doc = "history.docx"  # 设置文档路径
+chat_doc = ChatDoc()
+chat_doc.doc = "history.docx"  # 设置文档路径
 
 # 处理文档
-assistant.splitSentences()      # 执行分块和向量化
+chat_doc.splitSentences()      # 执行分块和向量化
 
 # 智能问答
-question = "请设计关于工业革命的2道选择题"
-response = assistant.chatWithDoc(question)
+response = chat_doc.chatWithDoc("请为资本主义世界殖民体系设计2道进阶难度题目")
 print(response.content)
